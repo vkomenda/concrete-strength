@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vkomenda/concrete-strength/blob/main/concrete.ipynb)
+
 This is an attempt to recreate the neural network predicting concrete strength development [1] based on the experimental dataset [2].
 
 Unlike in [1], I didn't divide the whole dataset into 4 subsets based on local correlation. Instead, I pick a hundred experiments from the dataset at random and use those for validation of the trained network. All other experiments are used for training the network. It turns out that this simple randomised approach needs refinement because while the error rate does converge to a fixed limit, the predicted results still differ from the experimental results sometimes quite a bit. So it appears that preprocessing the dataset and finding local correlations should help improving the accuracy. This is currently a todo. Specifically, the coefficients of determination R^2 must be at least above 0.8 in order to match the accuracy of the NN in [1].
